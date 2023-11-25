@@ -20,10 +20,29 @@ This is a markdown file, it is structured into executable code chunks and normal
 The next line is a code chunk but ignore this one for now
 ```{r setup, include=FALSE}
 #this is onyl to set up the code, dont't touch this cell
+
+#remove variables
 rm(list = ls())
+
+#load required packages, install only if not installed yet
+p_needed = c(
+  "tidyverse",
+  "knittr"
+)
+packages <- rownames(installed.packages())
+p_to_install <- p_needed[!(p_needed %in% packages)]
+
+#install the uninstalled packages
+if(length(p_to_install > 0)){
+  install.packages(p_to_install)
+}
+
+#load all required packages
+pkg_success <- sapply(p_needed, require, character.only = TRUE)
+
+pkg_fail <- names(pkg_success)[which(!pkg_success)]
+
 knitr::opts_chunk$set(echo = TRUE)
-install.packages("tidyverse")
-library("tidyverse")
 ```
 
 # Recap of R
@@ -159,7 +178,7 @@ str_replace_all(a_txt_split, pattern = re, replacement = replacement)
 ```
 
 
-# Excercise
+# Excercise 1
 In this task you are asked to create regular expressions that meet the specified conditions.
 __a)__ Write a regular expression that returns all integer numbers from a text that are surrounded by whitespaces. 
 ```{r t1a R, include=T}
@@ -210,8 +229,46 @@ not shot forgot"
 
 ```
 
+#Excercise 2
+```{r loading data, include=T}
+#Load data
+load("Thesis_data_changed.Rda")# Data from my thesis (text entries are in randomized order, demographic variables and edit time removed)
 
-#Incomplete solutions Excercise
+#column names names in data
+colnames(df)
+
+#we can use regex in select() and match()
+IV03 = df %>% select( matches("IV03_01"))
+df_without_IV03 = df %>% select( -matches("IV03_01"))
+```
+
+a) remove all TIME variables from df
+```{r t2a, include=T}
+
+
+```
+b) create a second dataframe with only the first items from all variables
+```{r t2b, include=T}
+
+
+```
+
+c) how many red dogs are mentioned in string_var_2 of df?
+```{r t2c, include=T}
+
+
+```
+
+d) how many mentions of "Geld" or "Job" are in in IV03_01.
+How many answers contain multiple mentions of "Job"
+```{r t2d, include=T}
+
+
+```
+
+e) use ctrl+F to find all comments in this file that contain the string "regex"
+#Solutions
+```{r Incomplete solutions Excercise 1, include=T}
 
 #t1a = "(?<=\s)[0-9]+(?=\s)"
 #t1b = "(?<=\s)([0-1]\d{3}|20[0-1]\d|202[0-2])(?=\s)"
@@ -226,3 +283,5 @@ not shot forgot"
 
 #\b is word boundry
 #t1e = "^pot\b", "1234" # this is wrong
+```
+
