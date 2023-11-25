@@ -1,0 +1,228 @@
+---
+title: "Regex Kurs"
+author: "Leon Werner"
+date: "25 11 2023"
+output: html_document
+---
+content mostly based on the Text Analytics I HWS 22/23 excercise by Marlene Lutz
+and partly on https://campus.datacamp.com/courses/intermediate-regular-expressions-in-r/regular-expressions-writing-custom-patterns?ex=2
+# Background
+
+Rgular Expressions (RegEx) allow to look for simple patterns in text.
+E.g. 
+- look for valid email adresses
+- look for .de websites
+- look for variable names in a big dataset
+
+
+This is a markdown file, it is structured into executable code chunks and normal text (like this)
+
+The next line is a code chunk but ignore this one for now
+```{r setup, include=FALSE}
+#this is onyl to set up the code, dont't touch this cell
+rm(list = ls())
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("tidyverse")
+library("tidyverse")
+```
+
+# Recap of R
+The course starts here
+```{r recap R numers 1, include=True}
+#this is a comment
+
+this is code #but it doesn't work, put a hashtag before it to mark this line as comment!
+
+# run code either line by line using ctrl + enter or chunk by chunk using the green play button
+# you will see the results in the console
+
+1 #this is value of 1 (also code). It will be "printed" (inclueded in the output)
+
+print(1) #most of the times we don't have to write print
+
+2+3 # use R as calculator, the result will be in the output
+2*3
+2**3
+
+```
+
+We don't really know which number belongs to which calculation. 
+Maybe we should put some annotation in the output. This is where we need strings
+
+```{r recap R strings 1, include=True}
+"This is a string, a sequence of characters, it is encased by double quotation marks"
+"Strings can include special characters !§$%&/()=? and numbers 1234567890"
+"Strings can include most special characters like !§$%&/()=? and numbers 1234567890"
+
+'It can also be included in single quotation marks'
+"Or one insite the other 'like this'"
+"Cannot use the same" "type of quotation marks twice" #if uncommented this line will cause an error
+"we could discribe outputs, like: now we will print the number 1"
+1
+
+```
+
+```{r recap R numers 2, include=True}
+a = 5    # store values by assign them to "object" or "variable" a; variable names have to start with a letter
+"value of a"
+a        # get value of a
+get("a") # get value of a
+"value of 2*a"
+2*a      # work with the value of the variable
+
+a <- 2   #assign different value (using not = but <-)
+"new value of a"
+a
+"sequence of numbers"
+10:13
+```
+```{r recap R lists, include=True}
+list1 = c(a,2,a,4,5) #have a "list" or "vector" of values using c()
+"value of list1"
+list1
+"new value of list1"
+c = 1:5
+c
+# select some values from the list unsing indices within []
+"selected values from c"
+list1[1]
+list1[2:4]
+```
+Strings are also values. We can also assign them to variables
+
+```{r recap R strings 2, include=True}
+
+hello = "Hello" #assign string to variable 
+world = "World!"
+string_list = c(hello, world) # put string variables into one list
+print("List")
+string_list
+helloworld = paste(hello, world) # we can also paste the strings together
+print("combinded (pasted) strings")
+helloworld
+
+```
+```{r recap R bool, include=True}
+TRUE
+FALSE #are the two boolean values
+bool_list = c(TRUE,FALSE,FALSE,TRUE,FALSE)
+list1[bool_list] #can use list of boolean values to choose from list (instead of index)
+```
+# Regex
+The functions we use is from the tidyverse package
+
+str_detect and grep check if a text contains a pattern
+Try to figure out why we split the string first
+
+```{r regex1, include=T}
+a_txt = "This is an example text consisting fof 20 words with an average of 7 chars per word, test 1234123 1233 2312 1231 "
+
+# we can split strings using str_split (e.g by pace " ")
+"split output"
+a_txt_split = str_split(a_txt," ")
+a_txt_split #this is a nested list, lets change unlist it
+"unlisted"
+a_txt_split = unlist(a_txt_split)
+a_txt_split
+
+#we can use grep to get all elements in a list that fit with our re (or pattern)
+# here we look for the occurence of "a" in the string
+re = "a"
+"outputs"
+detect_output = str_detect(a_txt_split, pattern = re) #returns a list of Bools
+detect_output
+grep_output = grep(a_txt_split, pattern = re) #returns a list of indices
+grep_output
+#we can use both to select from the original list
+"list selection"
+a_txt_split[detect_output]
+a_txt_split[grep_output]
+```
+The next methods stop after they have found something (and go to the next element in the list)
+They all have verions that continue for all occurences of the pattern.
+```{r start str_extract, include=T}
+#This extracts whatever matched the pattern
+str_extract(a_txt, pattern = re)
+"version with all"
+str_extract_all(a_txt, pattern = re)
+```
+
+```{r start str_replace, include=T}
+#This replaces whatever matched the pattern
+replacement = "" #replace with nothing (delete)
+str_replace(a_txt, pattern = re, replacement = replacement)
+str_replace(a_txt_split, pattern = re, replacement = replacement)
+"version with all"
+str_replace_all(a_txt, pattern = re, replacement = replacement)
+str_replace_all(a_txt_split, pattern = re, replacement = replacement)
+
+```
+
+
+# Excercise
+In this task you are asked to create regular expressions that meet the specified conditions.
+__a)__ Write a regular expression that returns all integer numbers from a text that are surrounded by whitespaces. 
+```{r t1a R, include=T}
+a_txt = "This is an example text consisting fof 20 words with an average of 7 chars per word, test 1234123 1233 2312 1231 "
+
+```
+
+__b)__ Write a regular expression that returns all valid years that are surrounded by whitespaces in a text. A valid year is a 4 digit number in the range from 0000 to 2022. __(2 pts)__
+
+```{r t1b R, include=T}
+b_txt = "test 10001 0000 0100 0001 1111 0011 1234 1999 test 2000 test 2001 test 2010 test 2019 test 2022 test3 2023 test 2024 test test 9999 "
+
+```
+
+__c)__ Write a regular expression that returns all dates in the format YYYY-MM-DD or YYYY/MM/DD from a given text. Make sure that YYYY is a valid year (see task __b)__), MM is a valid month (1 to 12) and DD is a valid day (1 to 31). There is no need to make sure that e.g. XXXX-02-31 does not exist
+```{r t1c R, include=T}
+c_txt = "NOT VALID 12001-11-11 also not valid 2001-11-123 and not x2001-11-12-11 VALID 2022-12-31 2022/12/31 2022-09-31 2022-12-05 not valid 2023-12-31 2022-13-31 2022-12-32 1 2012/10-20 2012-10/20"
+
+```
+
+
+__d)__ Assume you are given a list ``l`` of strings like the one below. Using regular expressions, return a list that contains all elements from ``l`` that **don't contain both, the letter ``a`` AND ``e``** and store the result in a variable ``l_filtered``. 
+
+ __Example:__ _given the list_
+
+ ``l = ["apple", "cucumber", "tomato", "zucchini", "pumpkin", "pear", "raspberry", "blueberry"]``
+
+ _you should return_
+
+ ``l_filtered = ['cucumber', 'tomato', 'zucchini', 'pumpkin', 'blueberry']``.
+
+# example list
+l = ["apple", "cucumber", "tomato", "zucchini", "pumpkin", "pear", "raspberry", "blueberry"]
+```{r t1d, include=T}
+c_txt = "NOT VALID 12001-11-11 also not valid 2001-11-123 and not x2001-11-12-11 VALID 2022-12-31 2022/12/31 2022-09-31 2022-12-05 not valid 2023-12-31 2022-13-31 2022-12-32 1 2012/10-20 2012-10/20"
+
+```
+
+
+ __e)__ For the given string ``s`` with 4 lines, change the _whole_ word ``pot`` (i.e. ``pottery`` should not be changed) to ``1234`` only if it is at the start of a line. 
+```{r t1e, include=T}
+
+s = "
+pottery clot pot
+pot dot plot hot
+spot rot pot got
+not shot forgot"
+
+```
+
+
+#Incomplete solutions Excercise
+
+#t1a = "(?<=\s)[0-9]+(?=\s)"
+#t1b = "(?<=\s)([0-1]\d{3}|20[0-1]\d|202[0-2])(?=\s)"
+#t1c = "(?:\b(?:[0-1]\d{3}|20[0-1]\d|202[0-2])-(?:0\d|1[12])-(?:0\d|[12]\d|3[01])\b)|(?:\b(?:[0-1]\d{3}|20[0-1]\d|202[0-2])/(?:0\d|1[12])/(?:0\d|[12]\d|3[01])\b)"
+#t1c2 ="\b(?:[0-1]\d{3}|20[0-1]\d|202[0-2])[-/](?:0\d|1[12])(?:(?<=-..)-|(?<=/..)/)(?:0\d|[12]\d|3[01])\b")
+# used ?: to include group seperator
+# Using \b boundary to fix it to 4/2/2 pattern
+# Backreference and [/-] is shorter but doesn't return a result in nice format
+
+#t1d = "a.*e|e.*a" # a followed by e or e followed by a
+#l_filtered = [w for w in l if not re_d.search(w)] 
+
+#\b is word boundry
+#t1e = "^pot\b", "1234" # this is wrong
