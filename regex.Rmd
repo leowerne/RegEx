@@ -27,14 +27,20 @@ rm(list = ls())
 #load required packages, install only if not installed yet
 p_needed = c(
   "tidyverse",
-  "knittr"
+  "knittr",
+  "devtools"
 )
 packages <- rownames(installed.packages())
-p_to_install <- p_needed[!(p_needed %in% packages)]
+p_to_install <- p_needed[!(p_needed %in% packages)] #all packages that are not installed yet
 
 #install the uninstalled packages
 if(length(p_to_install > 0)){
   install.packages(p_to_install)
+}
+
+#Install regexplain from github
+if (FALSE == ("regexplain" %in% packages)){
+  devtools::install_github("gadenbuie/regexplain")
 }
 
 #load all required packages
@@ -42,6 +48,7 @@ pkg_success <- sapply(p_needed, require, character.only = TRUE)
 
 pkg_fail <- names(pkg_success)[which(!pkg_success)]
 
+# set chunk options for the markdown file
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -127,8 +134,9 @@ FALSE #are the two boolean values
 bool_list = c(TRUE,FALSE,FALSE,TRUE,FALSE)
 list1[bool_list] #can use list of boolean values to choose from list (instead of index)
 ```
+
 # Regex
-The functions we use is from the tidyverse package
+The functions we use are from the tidyverse package
 
 str_detect and grep check if a text contains a pattern
 Try to figure out why we split the string first
@@ -177,6 +185,10 @@ str_replace_all(a_txt_split, pattern = re, replacement = replacement)
 
 ```
 
+# Handy shiny-app
+```{r regexplain, include=T}
+regexplain::regexplain_gadget()
+```
 
 # Excercise 1
 In this task you are asked to create regular expressions that meet the specified conditions.
@@ -267,6 +279,9 @@ How many answers contain multiple mentions of "Job"
 ```
 
 e) use ctrl+F to find all comments in this file that contain the string "regex"
+
+
+
 #Solutions
 ```{r Incomplete solutions Excercise 1, include=T}
 
