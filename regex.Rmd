@@ -290,7 +290,9 @@ How many answers contain multiple mentions of "Job"
 
 e) use ctrl+F to find all comments in this file that contain the string "regex"
 
+#Excercise 3
 
+See if a "FOUND" is followed by more than one "CHECK" before the next "FOUND" in the file Output.txt 
 
 #Solutions
 ```{r Incomplete solutions Excercise 1, include=T}
