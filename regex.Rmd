@@ -101,18 +101,24 @@ a <- 2   #assign different value (using not = but <-)
 a
 "sequence of numbers"
 10:13
+"a is a variable of class"
+class(a)
 ```
 ```{r recap R lists, include=True}
 list1 = c(a,2,a,4,5) #have a "list" or "vector" of values using c()
 "value of list1"
 list1
 "new value of list1"
-c = 1:5
-c
+list1 = 1:5
+list1
 # select some values from the list unsing indices within []
 "selected values from c"
 list1[1]
 list1[2:4]
+"list1 is a variable of class"
+class(list1)
+"list1[1] is a variable of class"
+class(list1[1])
 ```
 Strings are also values. We can also assign them to variables
 
@@ -121,18 +127,21 @@ Strings are also values. We can also assign them to variables
 hello = "Hello" #assign string to variable 
 world = "World!"
 string_list = c(hello, world) # put string variables into one list
-print("List")
+"List" 
 string_list
 helloworld = paste(hello, world) # we can also paste the strings together
-print("combinded (pasted) strings")
+"combinded (pasted) strings"
 helloworld
-
+"helloworld is a variable of class"
+class(helloworld)
 ```
 ```{r recap R bool, include=True}
 TRUE
 FALSE #are the two boolean values
 bool_list = c(TRUE,FALSE,FALSE,TRUE,FALSE)
 list1[bool_list] #can use list of boolean values to choose from list (instead of index)
+"TRUE is of class"
+class(TRUE)
 ```
 
 # Regex
@@ -224,6 +233,7 @@ __d)__ Assume you are given a list ``l`` of strings like the one below. Using re
 
 # example list
 l = ["apple", "cucumber", "tomato", "zucchini", "pumpkin", "pear", "raspberry", "blueberry"]
+
 ```{r t1d, include=T}
 c_txt = "NOT VALID 12001-11-11 also not valid 2001-11-123 and not x2001-11-12-11 VALID 2022-12-31 2022/12/31 2022-09-31 2022-12-05 not valid 2023-12-31 2022-13-31 2022-12-32 1 2012/10-20 2012-10/20"
 
