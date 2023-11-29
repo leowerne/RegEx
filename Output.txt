@@ -1,0 +1,596 @@
+FOUND 
+     asset         timedif  batch product               start  \
+101    C1 1 days 03:00:00  R1076     P24 2023-05-08 04:45:00   
+102    C1 0 days 19:29:20  R1077     P24 2023-05-09 02:42:58   
+
+                    end  start_index  end_index  timedif_hours     timedif_abs  
+101 2023-05-09 07:45:00        15279      15334      27.000000 1 days 03:00:00  
+102 2023-05-09 22:12:18        15327      15367      19.488889 0 days 19:29:20  
+CHECK start ['C1' 'R1077' Timestamp('2023-05-09 02:42:58')] lies imbetween 2023-05-08 04:45:00 and 2023-05-09 07:45:00
+should change
+FOUND 
+     asset                timedif  batch product               start  \
+328    F1 0 days 13:22:18.381818  R1132     P24 2023-09-17 17:10:00   
+327    F1 0 days 13:22:18.381818  R0133      P6 2023-09-18 04:42:09   
+
+                              end  start_index  end_index  timedif_hours  \
+328 2023-09-18 06:32:18.381818181        23070      23096      13.371773   
+327 2023-09-18 18:04:27.381818181        23090      23108      13.371773   
+
+               timedif_abs  
+328 0 days 13:22:18.381818  
+327 0 days 13:22:18.381818  
+CHECK start ['F1' 'R0133' Timestamp('2023-09-18 04:42:09')] lies imbetween 2023-09-17 17:10:00 and 2023-09-18 06:32:18.381818181
+should change
+FOUND 
+     asset                timedif  batch product               start  \
+610   F11        1 days 15:55:54  Q0271      P3 2023-01-12 09:55:13   
+611   F11 0 days 17:36:53.970297  Q0272      P3 2023-01-13 09:49:11   
+
+                              end  start_index  end_index  timedif_hours  \
+610 2023-01-14 01:51:07.000000000         7605       7668      39.931667   
+611 2023-01-14 03:26:04.970297029         7628       7673      17.614992   
+
+               timedif_abs  
+610        1 days 15:55:54  
+611 0 days 17:36:53.970297  
+CHECK start ['F11' 'Q0272' Timestamp('2023-01-13 09:49:11')] lies imbetween 2023-01-12 09:55:13 and 2023-01-14 01:51:07
+should change
+FOUND 
+     asset                timedif  batch product               start  \
+615   F11        1 days 03:39:11  Q0276      P3 2023-01-17 21:50:46   
+616   F11 0 days 17:36:53.970297  Q0277      P3 2023-01-19 00:22:00   
+
+                              end  start_index  end_index  timedif_hours  \
+615 2023-01-19 01:29:57.000000000         7942       8012      27.653056   
+616 2023-01-19 17:58:53.970297029         8011       8054      17.614992   
+
+               timedif_abs  
+615        1 days 03:39:11  
+616 0 days 17:36:53.970297  
+CHECK start ['F11' 'Q0277' Timestamp('2023-01-19 00:22:00')] lies imbetween 2023-01-17 21:50:46 and 2023-01-19 01:29:57
+should change
+FOUND 
+     asset                timedif  batch product               start  \
+676   F11 0 days 17:36:53.970297  R0064      P3 2023-03-24 08:01:41   
+677   F11        3 days 06:00:49  R0065      P3 2023-03-24 20:11:52   
+
+                              end  start_index  end_index  timedif_hours  \
+676 2023-03-25 01:38:34.970297029        12684      12732      17.614992   
+677 2023-03-28 02:12:41.000000000        12722      12913      78.013611   
+
+               timedif_abs  
+676 0 days 17:36:53.970297  
+677        3 days 06:00:49  
+CHECK start ['F11' 'R0065' Timestamp('2023-03-24 20:11:52')] lies imbetween 2023-03-24 08:01:41 and 2023-03-25 01:38:34.970297029
+should change
+FOUND 
+     asset                timedif  batch product               start  \
+686   F11 0 days 17:36:53.970297  R0074      P3 2023-04-09 07:10:12   
+687   F11 0 days 17:36:53.970297  R0075      P3 2023-04-09 23:43:27   
+
+                              end  start_index  end_index  timedif_hours  \
+686 2023-04-10 00:47:05.970297029        13651      13705      17.614992   
+687 2023-04-10 17:20:20.970297029        13699      13733      17.614992   
+
+               timedif_abs  
+686 0 days 17:36:53.970297  
+687 0 days 17:36:53.970297  
+CHECK start ['F11' 'R0075' Timestamp('2023-04-09 23:43:27')] lies imbetween 2023-04-09 07:10:12 and 2023-04-10 00:47:05.970297029
+should change
+FOUND 
+     asset                timedif  batch product               start  \
+740   F11        1 days 14:40:15  R0129      P3 2023-06-09 12:07:32   
+741   F11 0 days 17:36:53.970297  R0130      P3 2023-06-10 07:42:43   
+
+                              end  start_index  end_index  timedif_hours  \
+740 2023-06-11 02:47:47.000000000        17328      17424      38.670833   
+741 2023-06-11 01:19:36.970297029        17384      17423      17.614992   
+
+               timedif_abs  
+740        1 days 14:40:15  
+741 0 days 17:36:53.970297  
+CHECK start ['F11' 'R0130' Timestamp('2023-06-10 07:42:43')] lies imbetween 2023-06-09 12:07:32 and 2023-06-11 02:47:47
+should delete
+FOUND 
+     asset         timedif  batch product               start  \
+946   F12 1 days 06:45:23  R0026     P18 2023-05-15 00:57:17   
+948   F12 0 days 15:40:20  R0027     P18 2023-05-15 22:05:25   
+
+                    end  start_index  end_index  timedif_hours     timedif_abs  
+946 2023-05-16 07:42:40        15701      15820      30.756389 1 days 06:45:23  
+948 2023-05-16 13:45:45        15786      15849      15.672222 0 days 15:40:20  
+CHECK start ['F12' 'R0027' Timestamp('2023-05-15 22:05:25')] lies imbetween 2023-05-15 00:57:17 and 2023-05-16 07:42:40
+should change
+FOUND 
+     asset                timedif  batch product                         start  \
+996   F13        2 days 11:59:11  Q0008     P30 2022-09-15 06:13:00.000000000   
+997   F13 0 days 14:26:57.030769  Q0009     P30 2022-09-17 08:02:30.969230770   
+
+                    end  start_index  end_index  timedif_hours  \
+996 2022-09-17 18:12:11          401        528      59.986389   
+997 2022-09-17 22:29:28          506        542      14.449175   
+
+               timedif_abs  
+996        2 days 11:59:11  
+997 0 days 14:26:57.030769  
+CHECK start ['F13' 'Q0009' Timestamp('2022-09-17 08:02:30.969230770')] lies imbetween 2022-09-15 06:13:00 and 2022-09-17 18:12:11
+should change
+FOUND 
+      asset                timedif  batch product               start  \
+1015   F13        2 days 10:24:21  Q0048     P13 2022-10-04 20:21:06   
+1016   F13 0 days 14:26:57.030769  Q0049     P13 2022-10-06 14:55:00   
+
+                               end  start_index  end_index  timedif_hours  \
+1015 2022-10-07 06:45:27.000000000         1797       1948      58.405833   
+1016 2022-10-07 05:21:57.030769230         1909       1941      14.449175   
+
+                timedif_abs  
+1015        2 days 10:24:21  
+1016 0 days 14:26:57.030769  
+CHECK start ['F13' 'Q0049' Timestamp('2022-10-06 14:55:00')] lies imbetween 2022-10-04 20:21:06 and 2022-10-07 06:45:27
+should delete
+FOUND 
+      asset         timedif  batch product               start  \
+1393    F2 0 days 12:28:13  Q0009     P15 2022-09-03 17:20:35   
+1400    F2 0 days 11:23:31  Q0189     P27 2022-09-03 20:23:03   
+
+                     end  start_index  end_index  timedif_hours  \
+1393 2022-09-04 05:48:48           23         30      12.470278   
+1400 2022-09-04 07:46:34           25         32      11.391944   
+
+         timedif_abs  
+1393 0 days 12:28:13  
+1400 0 days 11:23:31  
+CHECK start ['F2' 'Q0189' Timestamp('2022-09-03 20:23:03')] lies imbetween 2022-09-03 17:20:35 and 2022-09-04 05:48:48
+should change
+FOUND 
+      asset         timedif    batch product               start  \
+1837    F4 0 days 09:16:49  new1978      P7 2023-06-26 10:07:10   
+2116    F4 0 days 14:34:24   new451      P7 2023-06-26 12:45:49   
+
+                     end  start_index  end_index  timedif_hours  \
+1837 2023-06-26 19:23:59        17581      17591       9.280278   
+2116 2023-06-27 03:20:13        17585      17594      14.573333   
+
+         timedif_abs  
+1837 0 days 09:16:49  
+2116 0 days 14:34:24  
+CHECK start ['F4' 'new451' Timestamp('2023-06-26 12:45:49')] lies imbetween 2023-06-26 10:07:10 and 2023-06-26 19:23:59
+should change
+FOUND 
+      asset                timedif    batch product               start  \
+3115    R1 0 days 07:08:47.077474  new1969      P4 2023-06-07 03:47:30   
+2924    R1        0 days 05:33:12    R0577      P4 2023-06-07 03:48:30   
+
+                               end  start_index  end_index  timedif_hours  \
+3115 2023-06-07 10:56:17.077474892        17146      17170       7.146410   
+2924 2023-06-07 09:21:42.000000000        17147      17165       5.553333   
+
+                timedif_abs  
+3115 0 days 07:08:47.077474  
+2924        0 days 05:33:12  
+CHECK start ['R1' 'R0577' Timestamp('2023-06-07 03:48:30')] lies imbetween 2023-06-07 03:47:30 and 2023-06-07 10:56:17.077474892
+should delete
+CHECK start ['R1' 'R0579' Timestamp('2023-06-07 10:24:50')] lies imbetween 2023-06-07 03:47:30 and 2023-06-07 10:56:17.077474892
+should change
+FOUND 
+      asset         timedif    batch product               start  \
+5383   R15 0 days 05:30:26  new1979      P4 2022-09-12 22:45:32   
+5412   R15 0 days 06:41:55   new611      P4 2022-09-13 04:15:48   
+
+                     end  start_index  end_index  timedif_hours  \
+5383 2022-09-13 04:15:58          293        298       5.507222   
+5412 2022-09-13 10:57:43          297        308       6.698611   
+
+         timedif_abs  
+5383 0 days 05:30:26  
+5412 0 days 06:41:55  
+CHECK start ['R15' 'new611' Timestamp('2022-09-13 04:15:48')] lies imbetween 2022-09-12 22:45:32 and 2022-09-13 04:15:58
+should change
+FOUND 
+      asset         timedif    batch product               start  \
+5384   R15 0 days 04:59:27  new1980      P4 2022-09-19 03:33:33   
+5442   R15 0 days 03:36:52   new643      P4 2022-09-19 08:30:30   
+
+                     end  start_index  end_index  timedif_hours  \
+5384 2022-09-19 08:33:00          617        628       4.990833   
+5442 2022-09-19 12:07:22          627        633       3.614444   
+
+         timedif_abs  
+5384 0 days 04:59:27  
+5442 0 days 03:36:52  
+CHECK start ['R15' 'new643' Timestamp('2022-09-19 08:30:30')] lies imbetween 2022-09-19 03:33:33 and 2022-09-19 08:33:00
+should change
+FOUND 
+      asset         timedif    batch product               start  \
+5385   R15 0 days 03:44:28  new1981      P4 2022-09-23 21:39:59   
+5463   R15 0 days 06:52:31   new666      P4 2022-09-24 01:23:22   
+
+                     end  start_index  end_index  timedif_hours  \
+5385 2022-09-24 01:24:27          868        881       3.741111   
+5463 2022-09-24 08:15:53          880        898       6.875278   
+
+         timedif_abs  
+5385 0 days 03:44:28  
+5463 0 days 06:52:31  
+CHECK start ['R15' 'new666' Timestamp('2022-09-24 01:23:22')] lies imbetween 2022-09-23 21:39:59 and 2022-09-24 01:24:27
+should change
+FOUND 
+      asset                timedif    batch product               start  \
+5470   R15 0 days 04:43:43.376835   new673      P4 2022-09-25 14:48:28   
+5386   R15        0 days 03:43:57  new1982      P4 2022-09-25 18:26:55   
+
+                               end  start_index  end_index  timedif_hours  \
+5470 2022-09-25 19:32:11.376835236         1014       1031       4.728716   
+5386 2022-09-25 22:10:52.000000000         1026       1035       3.732500   
+
+                timedif_abs  
+5470 0 days 04:43:43.376835  
+5386        0 days 03:43:57  
+CHECK start ['R15' 'new1982' Timestamp('2022-09-25 18:26:55')] lies imbetween 2022-09-25 14:48:28 and 2022-09-25 19:32:11.376835236
+should change
+FOUND 
+      asset                timedif    batch product               start  \
+5472   R15 0 days 04:43:43.376835   new677      P4 2022-09-26 01:58:06   
+5387   R15        0 days 04:00:53  new1983      P4 2022-09-26 05:56:31   
+
+                               end  start_index  end_index  timedif_hours  \
+5472 2022-09-26 06:41:49.376835236         1056       1080       4.728716   
+5387 2022-09-26 09:57:24.000000000         1074       1086       4.014722   
+
+                timedif_abs  
+5472 0 days 04:43:43.376835  
+5387        0 days 04:00:53  
+CHECK start ['R15' 'new1983' Timestamp('2022-09-26 05:56:31')] lies imbetween 2022-09-26 01:58:06 and 2022-09-26 06:41:49.376835236
+should change
+FOUND 
+      asset         timedif    batch product               start  \
+5387   R15 0 days 04:00:53  new1983      P4 2022-09-26 05:56:31   
+5473   R15 0 days 04:00:29   new680      P4 2022-09-26 09:56:45   
+
+                     end  start_index  end_index  timedif_hours  \
+5387 2022-09-26 09:57:24         1074       1086       4.014722   
+5473 2022-09-26 13:57:14         1085       1100       4.008056   
+
+         timedif_abs  
+5387 0 days 04:00:53  
+5473 0 days 04:00:29  
+CHECK start ['R15' 'new680' Timestamp('2022-09-26 09:56:45')] lies imbetween 2022-09-26 05:56:31 and 2022-09-26 09:57:24
+should change
+FOUND 
+      asset                timedif    batch product               start  \
+5527   R15 0 days 04:43:43.376835   new734      P4 2022-10-08 02:56:44   
+5388   R15        0 days 04:00:00  new1984      P4 2022-10-08 06:53:23   
+
+                               end  start_index  end_index  timedif_hours  \
+5527 2022-10-08 07:40:27.376835236         2017       2039       4.728716   
+5388 2022-10-08 10:53:23.000000000         2030       2049       4.000000   
+
+                timedif_abs  
+5527 0 days 04:43:43.376835  
+5388        0 days 04:00:00  
+CHECK start ['R15' 'new1984' Timestamp('2022-10-08 06:53:23')] lies imbetween 2022-10-08 02:56:44 and 2022-10-08 07:40:27.376835236
+should change
+FOUND 
+      asset                timedif   batch product               start  \
+5529   R15 0 days 04:43:43.376835  new738      P4 2022-10-08 16:22:39   
+5530   R15 0 days 04:43:43.376835  new739      P4 2022-10-08 20:39:49   
+
+                               end  start_index  end_index  timedif_hours  \
+5529 2022-10-08 21:06:22.376835236         2065       2086       4.728716   
+5530 2022-10-09 01:23:32.376835236         2083       2094       4.728716   
+
+                timedif_abs  
+5529 0 days 04:43:43.376835  
+5530 0 days 04:43:43.376835  
+CHECK start ['R15' 'new739' Timestamp('2022-10-08 20:39:49')] lies imbetween 2022-10-08 16:22:39 and 2022-10-08 21:06:22.376835236
+should change
+FOUND 
+      asset                timedif    batch product               start  \
+5530   R15 0 days 04:43:43.376835   new739      P4 2022-10-08 20:39:49   
+5389   R15        0 days 04:17:30  new1985      P4 2022-10-09 00:56:21   
+
+                               end  start_index  end_index  timedif_hours  \
+5530 2022-10-09 01:23:32.376835236         2083       2094       4.728716   
+5389 2022-10-09 05:13:51.000000000         2093       2103       4.291667   
+
+                timedif_abs  
+5530 0 days 04:43:43.376835  
+5389        0 days 04:17:30  
+CHECK start ['R15' 'new1985' Timestamp('2022-10-09 00:56:21')] lies imbetween 2022-10-08 20:39:49 and 2022-10-09 01:23:32.376835236
+should change
+FOUND 
+      asset                timedif   batch product               start  \
+5532   R15 0 days 04:43:43.376835  new743      P4 2022-10-09 09:13:43   
+5533   R15 0 days 04:43:43.376835  new744      P4 2022-10-09 13:10:36   
+
+                               end  start_index  end_index  timedif_hours  \
+5532 2022-10-09 13:57:26.376835236         2113       2127       4.728716   
+5533 2022-10-09 17:54:19.376835236         2124       2138       4.728716   
+
+                timedif_abs  
+5532 0 days 04:43:43.376835  
+5533 0 days 04:43:43.376835  
+CHECK start ['R15' 'new744' Timestamp('2022-10-09 13:10:36')] lies imbetween 2022-10-09 09:13:43 and 2022-10-09 13:57:26.376835236
+should change
+FOUND 
+      asset                timedif   batch product               start  \
+5583   R15 0 days 04:43:43.376835  new796      P4 2022-10-26 00:19:23   
+5584   R15 0 days 04:43:43.376835  new797      P4 2022-10-26 04:07:03   
+
+                               end  start_index  end_index  timedif_hours  \
+5583 2022-10-26 05:03:06.376835236         2880       2890       4.728716   
+5584 2022-10-26 08:50:46.376835236         2888       2898       4.728716   
+
+                timedif_abs  
+5583 0 days 04:43:43.376835  
+5584 0 days 04:43:43.376835  
+CHECK start ['R15' 'new797' Timestamp('2022-10-26 04:07:03')] lies imbetween 2022-10-26 00:19:23 and 2022-10-26 05:03:06.376835236
+should change
+FOUND 
+      asset                timedif    batch product               start  \
+5584   R15 0 days 04:43:43.376835   new797      P4 2022-10-26 04:07:03   
+5391   R15        0 days 05:11:55  new1987      P4 2022-10-26 08:30:45   
+
+                               end  start_index  end_index  timedif_hours  \
+5584 2022-10-26 08:50:46.376835236         2888       2898       4.728716   
+5391 2022-10-26 13:42:40.000000000         2895       2913       5.198611   
+
+                timedif_abs  
+5584 0 days 04:43:43.376835  
+5391        0 days 05:11:55  
+CHECK start ['R15' 'new1987' Timestamp('2022-10-26 08:30:45')] lies imbetween 2022-10-26 04:07:03 and 2022-10-26 08:50:46.376835236
+should change
+FOUND 
+      asset                timedif   batch product               start  \
+5585   R15 0 days 04:43:43.376835  new800      P4 2022-10-26 13:42:55   
+5586   R15        0 days 16:50:26  new801      P4 2022-10-26 17:09:31   
+
+                               end  start_index  end_index  timedif_hours  \
+5585 2022-10-26 18:26:38.376835236         2915       2929       4.728716   
+5586 2022-10-27 09:59:57.000000000         2925       2967      16.840556   
+
+                timedif_abs  
+5585 0 days 04:43:43.376835  
+5586        0 days 16:50:26  
+CHECK start ['R15' 'new801' Timestamp('2022-10-26 17:09:31')] lies imbetween 2022-10-26 13:42:55 and 2022-10-26 18:26:38.376835236
+should change
+FOUND 
+      asset                timedif   batch product               start  \
+5611   R15 0 days 04:43:43.376835  new826      P4 2022-11-02 00:07:42   
+5612   R15        0 days 05:25:11  new827      P4 2022-11-02 03:58:31   
+
+                               end  start_index  end_index  timedif_hours  \
+5611 2022-11-02 04:51:25.376835236         3377       3391       4.728716   
+5612 2022-11-02 09:23:42.000000000         3390       3406       5.419722   
+
+                timedif_abs  
+5611 0 days 04:43:43.376835  
+5612        0 days 05:25:11  
+CHECK start ['R15' 'new827' Timestamp('2022-11-02 03:58:31')] lies imbetween 2022-11-02 00:07:42 and 2022-11-02 04:51:25.376835236
+should change
+FOUND 
+      asset                timedif   batch product               start  \
+5627   R15 0 days 04:43:43.376835  new842      P4 2022-11-06 01:07:27   
+5628   R15        0 days 04:33:52  new843      P4 2022-11-06 05:49:27   
+
+                               end  start_index  end_index  timedif_hours  \
+5627 2022-11-06 05:51:10.376835236         3676       3696       4.728716   
+5628 2022-11-06 10:23:19.000000000         3695       3707       4.564444   
+
+                timedif_abs  
+5627 0 days 04:43:43.376835  
+5628        0 days 04:33:52  
+CHECK start ['R15' 'new843' Timestamp('2022-11-06 05:49:27')] lies imbetween 2022-11-06 01:07:27 and 2022-11-06 05:51:10.376835236
+should change
+FOUND 
+      asset         timedif    batch product               start  \
+5393   R15 0 days 03:59:29  new1989      P4 2022-12-01 03:22:24   
+5679   R15 0 days 08:43:49   new898      P4 2022-12-01 07:19:33   
+
+                     end  start_index  end_index  timedif_hours  \
+5393 2022-12-01 07:21:53         4728       4734       3.991389   
+5679 2022-12-01 16:03:22         4733       4751       8.730278   
+
+         timedif_abs  
+5393 0 days 03:59:29  
+5679 0 days 08:43:49  
+CHECK start ['R15' 'new898' Timestamp('2022-12-01 07:19:33')] lies imbetween 2022-12-01 03:22:24 and 2022-12-01 07:21:53
+should change
+FOUND 
+      asset                timedif   batch product               start  \
+5713   R15 0 days 04:43:43.376835  new932      P4 2022-12-09 05:49:48   
+5714   R15        0 days 09:03:52  new933      P4 2022-12-09 10:23:53   
+
+                               end  start_index  end_index  timedif_hours  \
+5713 2022-12-09 10:33:31.376835236         5325       5342       4.728716   
+5714 2022-12-09 19:27:45.000000000         5341       5362       9.064444   
+
+                timedif_abs  
+5713 0 days 04:43:43.376835  
+5714        0 days 09:03:52  
+CHECK start ['R15' 'new933' Timestamp('2022-12-09 10:23:53')] lies imbetween 2022-12-09 05:49:48 and 2022-12-09 10:33:31.376835236
+should change
+FOUND 
+      asset                timedif   batch product               start  \
+5731   R15 0 days 04:43:43.376835  new952      P4 2022-12-14 06:22:11   
+5732   R15        0 days 05:50:26  new953      P4 2022-12-14 10:24:37   
+
+                               end  start_index  end_index  timedif_hours  \
+5731 2022-12-14 11:05:54.376835236         5686       5701       4.728716   
+5732 2022-12-14 16:15:03.000000000         5700       5719       5.840556   
+
+                timedif_abs  
+5731 0 days 04:43:43.376835  
+5732        0 days 05:50:26  
+CHECK start ['R15' 'new953' Timestamp('2022-12-14 10:24:37')] lies imbetween 2022-12-14 06:22:11 and 2022-12-14 11:05:54.376835236
+should change
+FOUND 
+      asset                timedif  batch product               start  \
+5908   R19 0 days 06:35:03.208516  Q0278      P4 2022-10-07 17:24:17   
+5909   R19        0 days 06:59:57  Q0279      P4 2022-10-07 23:53:26   
+
+                               end  start_index  end_index  timedif_hours  \
+5908 2022-10-07 23:59:20.208516886         1991       2005       6.584225   
+5909 2022-10-08 06:53:23.000000000         2004       2029       6.999167   
+
+                timedif_abs  
+5908 0 days 06:35:03.208516  
+5909        0 days 06:59:57  
+CHECK start ['R19' 'Q0279' Timestamp('2022-10-07 23:53:26')] lies imbetween 2022-10-07 17:24:17 and 2022-10-07 23:59:20.208516886
+should change
+FOUND 
+      asset         timedif  batch product               start  \
+6381   R19 0 days 09:19:35  R0713      P4 2023-07-26 04:05:28   
+6382   R19 0 days 07:31:00  R0715      P4 2023-07-26 12:00:00   
+
+                     end  start_index  end_index  timedif_hours  \
+6381 2023-07-26 13:25:03        19591      19626       9.326389   
+6382 2023-07-26 19:31:00        19618      19639       7.516667   
+
+         timedif_abs  
+6381 0 days 09:19:35  
+6382 0 days 07:31:00  
+CHECK start ['R19' 'R0715' Timestamp('2023-07-26 12:00:00')] lies imbetween 2023-07-26 04:05:28 and 2023-07-26 13:25:03
+should change
+FOUND 
+      asset                timedif    batch product               start  \
+6831    R2        0 days 08:46:11    R0225      P4 2023-03-31 01:14:06   
+6832    R2 0 days 07:27:22.447784  R0225_2      P4 2023-03-31 01:14:06   
+
+                               end  start_index  end_index  timedif_hours  \
+6831 2023-03-31 10:00:17.000000000        13157      13183       8.769722   
+6832 2023-03-31 08:41:28.447784810        13156      13179       7.456235   
+
+                timedif_abs  
+6831        0 days 08:46:11  
+6832 0 days 07:27:22.447784  
+CHECK start ['R2' 'R0225_2' Timestamp('2023-03-31 01:14:06')] lies imbetween 2023-03-31 01:14:06 and 2023-03-31 10:00:17
+should delete
+FOUND 
+      asset                timedif  batch product               start  \
+7956   R21 0 days 16:12:52.738019  R0016      P3 2023-02-06 09:24:42   
+7957   R21        0 days 13:15:26  R0017      P3 2023-02-06 23:02:10   
+
+                               end  start_index  end_index  timedif_hours  \
+7956 2023-02-07 01:37:34.738019169         9211       9273      16.214649   
+7957 2023-02-07 12:17:36.000000000         9264       9318      13.257222   
+
+                timedif_abs  
+7956 0 days 16:12:52.738019  
+7957        0 days 13:15:26  
+CHECK start ['R21' 'R0017' Timestamp('2023-02-06 23:02:10')] lies imbetween 2023-02-06 09:24:42 and 2023-02-07 01:37:34.738019169
+should change
+FOUND 
+      asset                timedif  batch product               start  \
+7996   R21 0 days 16:12:52.738019  R0056      P3 2023-03-18 11:55:30   
+7997   R21 0 days 16:12:52.738019  R0057      P3 2023-03-18 22:39:26   
+
+                               end  start_index  end_index  timedif_hours  \
+7996 2023-03-19 04:08:22.738019169        12241      12293      16.214649   
+7997 2023-03-19 14:52:18.738019169        12277      12322      16.214649   
+
+                timedif_abs  
+7996 0 days 16:12:52.738019  
+7997 0 days 16:12:52.738019  
+CHECK start ['R21' 'R0057' Timestamp('2023-03-18 22:39:26')] lies imbetween 2023-03-18 11:55:30 and 2023-03-19 04:08:22.738019169
+should change
+FOUND 
+      asset                timedif  batch product               start  \
+7997   R21 0 days 16:12:52.738019  R0057      P3 2023-03-18 22:39:26   
+7998   R21        0 days 01:34:32  R0058      P3 2023-03-19 04:48:23   
+
+                               end  start_index  end_index  timedif_hours  \
+7997 2023-03-19 14:52:18.738019169        12277      12322      16.214649   
+7998 2023-03-19 06:22:55.000000000        12295      12301       1.575556   
+
+                timedif_abs  
+7997 0 days 16:12:52.738019  
+7998        0 days 01:34:32  
+CHECK start ['R21' 'R0058' Timestamp('2023-03-19 04:48:23')] lies imbetween 2023-03-18 22:39:26 and 2023-03-19 14:52:18.738019169
+should delete
+FOUND 
+      asset                timedif  batch product               start  \
+8068   R21 0 days 16:12:52.738019  R0128      P3 2023-06-08 08:10:55   
+8069   R21        0 days 11:00:53  R0129      P3 2023-06-08 21:31:01   
+
+                               end  start_index  end_index  timedif_hours  \
+8068 2023-06-09 00:23:47.738019169        17235      17288      16.214649   
+8069 2023-06-09 08:31:54.000000000        17281      17310      11.014722   
+
+                timedif_abs  
+8068 0 days 16:12:52.738019  
+8069        0 days 11:00:53  
+CHECK start ['R21' 'R0129' Timestamp('2023-06-08 21:31:01')] lies imbetween 2023-06-08 08:10:55 and 2023-06-09 00:23:47.738019169
+should change
+FOUND 
+      asset                timedif  batch product               start  \
+8816   R25        0 days 08:45:19  Q0004     P30 2022-09-02 10:35:02   
+8930   R25 0 days 07:24:11.657992  Q0189     P27 2022-09-02 12:43:48   
+
+                               end  start_index  end_index  timedif_hours  \
+8816 2022-09-02 19:20:21.000000000           14         16       8.755278   
+8930 2022-09-02 20:07:59.657992565           15         18       7.403238   
+
+                timedif_abs  
+8816        0 days 08:45:19  
+8930 0 days 07:24:11.657992  
+CHECK start ['R25' 'Q0189' Timestamp('2022-09-02 12:43:48')] lies imbetween 2022-09-02 10:35:02 and 2022-09-02 19:20:21
+should change
+FOUND 
+      asset                timedif  batch product               start  \
+8879   R25        0 days 07:00:04  Q0068      P2 2022-11-06 04:29:55   
+8911   R25 0 days 07:24:11.657992  Q0086      P2 2022-11-06 06:42:53   
+
+                               end  start_index  end_index  timedif_hours  \
+8879 2022-11-06 11:29:59.000000000         3690       3710       7.001111   
+8911 2022-11-06 14:07:04.657992565         3700       3717       7.403238   
+
+                timedif_abs  
+8879        0 days 07:00:04  
+8911 0 days 07:24:11.657992  
+CHECK start ['R25' 'Q0086' Timestamp('2022-11-06 06:42:53')] lies imbetween 2022-11-06 04:29:55 and 2022-11-06 11:29:59
+should change
+FOUND 
+      asset                timedif  batch product               start  \
+9462    R6 0 days 04:55:51.250000  Q0089     P16 2022-10-17 20:16:54   
+9461    R6        0 days 05:22:18  Q0087     P16 2022-10-17 20:25:53   
+
+                         end  start_index  end_index  timedif_hours  \
+9462 2022-10-18 01:12:45.250         2556       2570       4.930903   
+9461 2022-10-18 01:48:11.000         2557       2571       5.371667   
+
+                timedif_abs  
+9462 0 days 04:55:51.250000  
+9461        0 days 05:22:18  
+CHECK start ['R6' 'Q0087' Timestamp('2022-10-17 20:25:53')] lies imbetween 2022-10-17 20:16:54 and 2022-10-18 01:12:45.250000
+should change
+FOUND 
+      asset         timedif  batch product               start  \
+9587    R6 0 days 19:24:17  R1101     P24 2023-06-02 05:45:01   
+9588    R6 2 days 02:09:00  R1102     P24 2023-06-03 01:03:00   
+
+                     end  start_index  end_index  timedif_hours  \
+9587 2023-06-03 01:09:18        16762      16848      19.404722   
+9588 2023-06-05 03:12:00        16847      16991      50.150000   
+
+         timedif_abs  
+9587 0 days 19:24:17  
+9588 2 days 02:09:00  
+CHECK start ['R6' 'R1102' Timestamp('2023-06-03 01:03:00')] lies imbetween 2023-06-02 05:45:01 and 2023-06-03 01:09:18
+should change
+FOUND 
+       asset         timedif  batch product               start  \
+11297    R9 0 days 10:13:48  R0404     P27 2023-04-06 10:16:12   
+11298    R9 0 days 10:59:15  R0405     P27 2023-04-06 17:10:45   
+
+                      end  start_index  end_index  timedif_hours  \
+11297 2023-04-06 20:30:00        13460      13483        10.2300   
+11298 2023-04-07 04:10:00        13475      13510        10.9875   
+
+          timedif_abs  
+11297 0 days 10:13:48  
+11298 0 days 10:59:15  
+CHECK start ['R9' 'R0405' Timestamp('2023-04-06 17:10:45')] lies imbetween 2023-04-06 10:16:12 and 2023-04-06 20:30:00
+should change
